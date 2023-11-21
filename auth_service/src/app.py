@@ -1,3 +1,5 @@
+import logging
+
 from flask import Flask
 from werkzeug.exceptions import Unauthorized
 
@@ -8,6 +10,8 @@ from auth_service.src.routes.user_route import user_blueprint
 
 app = Flask(__name__)
 app.config['JWT_SECRET_KEY'] = 'secret'
+
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s')
 
 
 def create_app():
