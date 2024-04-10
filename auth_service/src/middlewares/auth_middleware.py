@@ -1,4 +1,4 @@
-from flask_jwt_extended import JWTManager
+from flask_jwt_extended import JWTManager # type: ignore
 
 from auth_service.src.models.user_model import User
 
@@ -14,5 +14,5 @@ def user_identity_lookup(user):
 
 
 def user_lookup_callback(_jwt_header, jwt_data):
-    identity = jwt_data["sub"]
-    return User("Gokul", "kgokul656@gmail.com")
+    identity = jwt_data["sub"] # user data
+    return User("gokul65", "gokul656@gmail.com", "test@12345")
