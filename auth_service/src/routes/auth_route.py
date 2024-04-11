@@ -2,13 +2,11 @@ from flask import Blueprint, request
 from flask_jwt_extended import create_access_token
 
 from auth_service.src.models.user_model import User
-from auth_service.src.services.user_service import UserService
+from auth_service.src.context import user_service
 from commons.errors import FIELD_NOT_FOUND
 from commons.utils import to_json
 
 auth_blueprint = Blueprint("auth", __name__)
-
-user_service = UserService()
 
 @auth_blueprint.route("/register", methods=["POST"])
 def register():
