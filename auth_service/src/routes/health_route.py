@@ -4,7 +4,6 @@ from flask import Blueprint, jsonify, make_response
 
 health_blueprint = Blueprint("health_bp", __name__)
 
-
 @health_blueprint.route("/ping", methods=['GET', 'HEAD'])
 def ping():
     time.sleep(2)
